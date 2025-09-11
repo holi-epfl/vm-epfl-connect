@@ -19,7 +19,7 @@ sleep 1
 
 # Start the new ngrok tunnel in the background
 echo "INFO: Starting new ngrok tunnel for SSH (port 22)..."
-ngrok tcp 22 --log=false &
+ngrok tcp 22 --log=stdout | grep "url=" > connected_info.log &
 
 # Give ngrok a moment to establish the connection and start its API
 echo "INFO: Waiting for tunnel to establish..."
