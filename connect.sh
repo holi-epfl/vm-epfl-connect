@@ -48,6 +48,7 @@ echo ""
 # Add the updated connection file to the staging area
 echo "INFO: Staging connected_info.log for commit..."
 git add connected_info.log
+git add connecting_details.log
 
 # Create a dynamic commit message with the current time and date
 COMMIT_MESSAGE=$(date +"connection info at %T, %d/%m/%Y")
