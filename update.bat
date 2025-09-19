@@ -2,17 +2,15 @@
 setlocal enabledelayedexpansion
 
 :: ===================================================================
-::  wsl-update.bat
+::  wsl-update.bat (v13 - Pure DOS-style Logic)
 ::
-::  This script automates the process of:
-::  1. Reading a TCP address from connected_info.log.
-::  2. Parsing the hostname and port.
-::  3. Safely updating the user's SSH config file with the new info.
+::  This script is built from scratch using only fundamental batch
+::  commands to rebuild the SSH config file safely.
 :: ===================================================================
 
 set "LOG_FILE=%USERPROFILE%\.wsl-connect\connected_info.log"
 set "SSH_HOST_ALIAS=wsl-epfl"
-set "SSH_USER=holi-epfl"
+set "SSH_USER=holi"
 
 echo INFO: Checking for log file at %LOG_FILE%...
 if not exist "%LOG_FILE%" (
@@ -47,32 +45,48 @@ echo   -^> Hostname: %HOSTNAME%
 echo   -^> Port:     %PORT%
 echo.
 
-echo INFO: Rebuilding the SSH config file...
+echo INFO: Rebuilding the SSH config file using basic line-by-line logic...
 set "SSH_DIR=%USERPROFILE%\.ssh"
 set "SSH_CONFIG_FILE=%SSH_DIR%\config"
 set "TEMP_CONFIG_FILE=%TEMP%\ssh_config_%RANDOM%.tmp"
 
 if not exist "%SSH_DIR%" mkdir "%SSH_DIR%"
-set "inTargetBlock=0"
+
+:: This is the core logic block. It reads the original file and writes
+:: to a temporary file, skipping only the target host block.
+set "isSkippingBlock=0"
 (
     if exist "%SSH_CONFIG_FILE%" (
         for /f "usebackq tokens=* delims=" %%L in ("%SSH_CONFIG_FILE%") do (
             set "line=%%L"
-            if /i "!line:Host %SSH_HOST_ALIAS%=!" NEQ "!line!" (
-                set "inTargetBlock=1"
-            ) else (
-                if "!inTargetBlock!"=="1" (
-                    if "!line:Host =!" NEQ "!line!" (
-                        set "inTargetBlock=0"
-                    )
-                )
+
+            :: Tokenize the current line to check if it's a "Host" line
+            set "firstToken="
+            set "secondToken="
+            for /f "tokens=1,2" %%A in ("!line!") do (
+                set "firstToken=%%A"
+                set "secondToken=%%B"
             )
-            if "!inTargetBlock!"=="0" (
+
+            :: Logic Step 1: Check if this line is the start of the block we want to skip.
+            if /i "!firstToken!"=="Host" if /i "!secondToken!"=="%SSH_HOST_ALIAS%" (
+                set "isSkippingBlock=1"
+            )
+
+            :: Logic Step 2: If we are currently skipping, check if this line is a NEW host, which means we should stop skipping.
+            if "!isSkippingBlock!"=="1" if /i "!firstToken!"=="Host" if /i "!secondToken!" NEQ "%SSH_HOST_ALIAS%" (
+                set "isSkippingBlock=0"
+            )
+
+            :: Logic Step 3: If the "skip" switch is off, then print the current line.
+            if "!isSkippingBlock!"=="0" (
                 echo(!line!
             )
         )
     )
 ) > "%TEMP_CONFIG_FILE%"
+
+:: Add the new, updated host entry to the end of the temp file
 (
     echo.
     echo Host %SSH_HOST_ALIAS%
@@ -80,12 +94,15 @@ set "inTargetBlock=0"
     echo     User %SSH_USER%
     echo     Port %PORT%
 ) >> "%TEMP_CONFIG_FILE%"
+
+:: Replace the original config with our newly created one
 move /Y "%TEMP_CONFIG_FILE%" "%SSH_CONFIG_FILE%" > nul
 if %ERRORLEVEL% neq 0 (
     echo ERROR: Could not update the SSH config file. Check permissions.
     goto :ERROR_AND_PAUSE
 )
-echo SUCCESS: SSH config was updated.
+
+echo SUCCESS: SSH config was rebuilt successfully.
 echo.
 goto :SUCCESS
 
