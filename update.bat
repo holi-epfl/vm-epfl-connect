@@ -12,6 +12,9 @@ set "LOG_FILE=%USERPROFILE%\.vm-epfl-connect\connected_info.log"
 set "SSH_HOST_ALIAS=vm-epfl"
 set "SSH_USER=holi"
 
+cd %USERPROFILE%\.vm-epfl-connect
+git pull
+
 echo INFO: Checking for log file at %LOG_FILE%...
 if not exist "%LOG_FILE%" (
     echo ERROR: The log file was not found!
