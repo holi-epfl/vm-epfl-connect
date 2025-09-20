@@ -1,10 +1,10 @@
-t=2025-09-20T15:38:21+0200 lvl=info msg="no configuration paths supplied"
-t=2025-09-20T15:38:21+0200 lvl=info msg="using configuration at default config path" path=/home/holi/snap/ngrok/310/.config/ngrok/ngrok.yml
-t=2025-09-20T15:38:21+0200 lvl=info msg="open config file" path=/home/holi/snap/ngrok/310/.config/ngrok/ngrok.yml err=nil
-t=2025-09-20T15:38:21+0200 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
-t=2025-09-20T15:38:21+0200 lvl=info msg="client session established" obj=tunnels.session
-t=2025-09-20T15:38:21+0200 lvl=info msg="tunnel session started" obj=tunnels.session
-t=2025-09-20T15:38:21+0200 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=//localhost:22 url=tcp://2.tcp.eu.ngrok.io:13467
-t=2025-09-20T15:38:22+0200 lvl=info msg="update available" obj=updater
-t=2025-09-20T15:38:23+0200 lvl=info msg=start pg=/api/tunnels id=f28a33bd73093b8c
-t=2025-09-20T15:38:23+0200 lvl=info msg=end pg=/api/tunnels id=f28a33bd73093b8c status=200 dur=378.577µs
+t=2025-09-20T15:39:54+0200 lvl=info msg="no configuration paths supplied"
+t=2025-09-20T15:39:54+0200 lvl=info msg="using configuration at default config path" path=/home/holi/snap/ngrok/310/.config/ngrok/ngrok.yml
+t=2025-09-20T15:39:54+0200 lvl=info msg="open config file" path=/home/holi/snap/ngrok/310/.config/ngrok/ngrok.yml err=nil
+t=2025-09-20T15:39:54+0200 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2025-09-20T15:39:54+0200 lvl=info msg="client session established" obj=tunnels.session
+t=2025-09-20T15:39:54+0200 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2025-09-20T15:39:54+0200 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=//localhost:22 url=tcp://0.tcp.eu.ngrok.io:18097
+t=2025-09-20T15:39:54+0200 lvl=info msg="update available" obj=updater
+t=2025-09-20T15:39:56+0200 lvl=info msg=start pg=/api/tunnels id=a40ac48122cca199
+t=2025-09-20T15:39:56+0200 lvl=info msg=end pg=/api/tunnels id=a40ac48122cca199 status=200 dur=324.16µs
