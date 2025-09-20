@@ -8,8 +8,8 @@ setlocal enabledelayedexpansion
 ::  commands to rebuild the SSH config file safely.
 :: ===================================================================
 
-set "LOG_FILE=%USERPROFILE%\.wsl-connect\connected_info.log"
-set "SSH_HOST_ALIAS=wsl-epfl"
+set "LOG_FILE=%USERPROFILE%\.vm-epfl-connect\connected_info.log"
+set "SSH_HOST_ALIAS=vm-epfl"
 set "SSH_USER=holi"
 
 echo INFO: Checking for log file at %LOG_FILE%...
