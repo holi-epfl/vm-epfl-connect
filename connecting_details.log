@@ -1,15 +1,9 @@
-t=2025-09-20T15:39:54+0200 lvl=info msg="no configuration paths supplied"
-t=2025-09-20T15:39:54+0200 lvl=info msg="using configuration at default config path" path=/home/holi/snap/ngrok/310/.config/ngrok/ngrok.yml
-t=2025-09-20T15:39:54+0200 lvl=info msg="open config file" path=/home/holi/snap/ngrok/310/.config/ngrok/ngrok.yml err=nil
-t=2025-09-20T15:39:54+0200 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
-t=2025-09-20T15:39:54+0200 lvl=info msg="client session established" obj=tunnels.session
-t=2025-09-20T15:39:54+0200 lvl=info msg="tunnel session started" obj=tunnels.session
-t=2025-09-20T15:39:54+0200 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=//localhost:22 url=tcp://0.tcp.eu.ngrok.io:18097
-t=2025-09-20T15:39:54+0200 lvl=info msg="update available" obj=updater
-t=2025-09-20T15:39:56+0200 lvl=info msg=start pg=/api/tunnels id=a40ac48122cca199
-t=2025-09-20T15:39:56+0200 lvl=info msg=end pg=/api/tunnels id=a40ac48122cca199 status=200 dur=324.16µs
-t=2025-09-20T20:07:10+0200 lvl=info msg="join connections" obj=join id=b08c4298f13a l=127.0.0.1:22 r=128.178.47.216:51806
-t=2025-09-20T20:24:56+0200 lvl=info msg="join connections" obj=join id=516e1ec27f5c l=127.0.0.1:22 r=128.178.47.227:59469
-t=2025-09-20T20:25:04+0200 lvl=info msg="join connections" obj=join id=7f6885dcd060 l=127.0.0.1:22 r=128.178.47.227:59472
-t=2025-09-20T20:25:32+0200 lvl=info msg="join connections" obj=join id=49490d27f5ab l=127.0.0.1:22 r=128.178.47.227:59487
-t=2025-09-20T20:30:13+0200 lvl=info msg="join connections" obj=join id=754f3ef3d09f l=127.0.0.1:22 r=128.178.47.227:59684
+t=2025-09-20T21:59:44+0000 lvl=info msg="no configuration paths supplied"
+t=2025-09-20T21:59:44+0000 lvl=info msg="using configuration at default config path" path=/home/holi/.config/ngrok/ngrok.yml
+t=2025-09-20T21:59:44+0000 lvl=info msg="open config file" path=/home/holi/.config/ngrok/ngrok.yml err=nil
+t=2025-09-20T21:59:44+0000 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2025-09-20T21:59:45+0000 lvl=info msg="client session established" obj=tunnels.session
+t=2025-09-20T21:59:45+0000 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2025-09-20T21:59:45+0000 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=//localhost:22 url=tcp://2.tcp.eu.ngrok.io:17855
+t=2025-09-20T21:59:46+0000 lvl=info msg=start pg=/api/tunnels id=94ef6d1559ee11cb
+t=2025-09-20T21:59:46+0000 lvl=info msg=end pg=/api/tunnels id=94ef6d1559ee11cb status=200 dur=314.398µs
