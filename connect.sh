@@ -23,7 +23,7 @@ ngrok tcp 22 --log=stdout > connecting_details.log &
 
 # Give ngrok a moment to establish the connection and start its API
 echo "INFO: Waiting for tunnel to establish..."
-sleep 2
+sleep 4
 
 # Query the local ngrok API to get the tunnel's public URL
 # The 'jq' tool is required to parse the JSON response
