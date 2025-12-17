@@ -1,10 +1,10 @@
-t=2025-12-17T00:22:34+0000 lvl=info msg="no configuration paths supplied"
-t=2025-12-17T00:22:34+0000 lvl=info msg="using configuration at default config path" path=/home/holi/.config/ngrok/ngrok.yml
-t=2025-12-17T00:22:34+0000 lvl=info msg="open config file" path=/home/holi/.config/ngrok/ngrok.yml err=nil
-t=2025-12-17T00:22:34+0000 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
-t=2025-12-17T00:22:35+0000 lvl=info msg="client session established" obj=tunnels.session
-t=2025-12-17T00:22:35+0000 lvl=info msg="tunnel session started" obj=tunnels.session
-t=2025-12-17T00:22:35+0000 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=//localhost:22 url=tcp://6.tcp.eu.ngrok.io:14265
-t=2025-12-17T00:22:35+0000 lvl=info msg="update available" obj=updater
-t=2025-12-17T00:22:38+0000 lvl=info msg=start pg=/api/tunnels id=aab98390d398209e
-t=2025-12-17T00:22:38+0000 lvl=info msg=end pg=/api/tunnels id=aab98390d398209e status=200 dur=900.62µs
+t=2025-12-17T00:31:27+0000 lvl=info msg="no configuration paths supplied"
+t=2025-12-17T00:31:27+0000 lvl=info msg="using configuration at default config path" path=/home/holi/.config/ngrok/ngrok.yml
+t=2025-12-17T00:31:27+0000 lvl=info msg="open config file" path=/home/holi/.config/ngrok/ngrok.yml err=nil
+t=2025-12-17T00:31:27+0000 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2025-12-17T00:31:28+0000 lvl=info msg="client session established" obj=tunnels.session
+t=2025-12-17T00:31:28+0000 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2025-12-17T00:31:28+0000 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=//localhost:22 url=tcp://7.tcp.eu.ngrok.io:14127
+t=2025-12-17T00:31:28+0000 lvl=info msg="update available" obj=updater
+t=2025-12-17T00:31:31+0000 lvl=info msg=start pg=/api/tunnels id=9bc9d4a436fcba98
+t=2025-12-17T00:31:31+0000 lvl=info msg=end pg=/api/tunnels id=9bc9d4a436fcba98 status=200 dur=288.264µs
